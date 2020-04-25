@@ -1,35 +1,97 @@
-@import './partials/variables', './partials/fonts';
+@import './partials/variables', './partials/fonts', './partials/mixins';
 
 *, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Avenir';
 }
 
 // Header 
 
-header {
+.header {
     background-color: $black;
     text-align: center;
-    padding: 7%;
+    padding: 5% 0 0;
     height: 80px;
 
-    & img {
-        width:    ;
+    &__img {
+        margin-bottom: 0.5rem;
     }
+
 }
 
-a {
-    text-decoration: none;
+.navbar {    
+    margin: 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+    }
+    
+    & a {
+        text-decoration: none;
+        color: $white;
+        font-size: 0.875rem;
+    }
+    
+    & li {
+        display: inline-block;
+    }
+
+    &__item {
+        margin: 0;
+        padding: 0 2rem;
+        width: 50%;
+        
+        &--bio {
+            border-bottom: solid 3px $white;
+        }
+    }
+
+}
+
+
+// Hero
+
+.hero {
+    background-image: url(../assets/image/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
     color: $white;
-    font-size: 1.5rem;
-    font-family: 'AvenirDemi';
+    padding: 1rem;
+    font-size: 0.875rem;
 }
 
-li {
-    display: inline-block;
+// About
+
+.about {
+    padding: 2rem 1rem;
+
+    &__img {
+        width: 100%;
+        margin: 1.5rem 0;
+
+    }
+
+    
+}
+
+
+.photo-gallery {
+    padding: 2rem 1rem;
+
+    &__img {
+        width: 180px;
+    
+    }
 }
 
 footer {
     background-color: $black;
+    color: $white;
 }
