@@ -5,6 +5,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Avenir';
+    color: $black;
+}
+
+h1, h2, h4 {
+    margin-bottom: 1.5rem;
 }
 
 // Header 
@@ -12,44 +17,56 @@
 .header {
     background-color: $black;
     text-align: center;
-    padding: 5% 0 0;
+    padding: 1rem 0 0;
     height: 80px;
+    box-sizing: border-box;
+
+    @include tablet {
+        display: flex;
+        padding: 2rem;
+    }
 
     &__img {
         margin-bottom: 0.5rem;
     }
-
 }
 
 .navbar {    
     margin: 0;
+    padding: 0;
 
     &__container {
         display: flex;
-        justify-content: space-around;
-        margin: 0;
+        justify-content: space-between;
+
+        @include tablet {
+            padding: 0 3rem;
+        }
     }
     
     & a {
         text-decoration: none;
         color: $white;
         font-size: 0.875rem;
-    }
-    
-    & li {
+        font-weight: 600;
         display: inline-block;
-    }
+        padding: 0 3rem 0.55rem;
 
-    &__item {
-        margin: 0;
-        padding: 0 2rem;
-        width: 50%;
-        
-        &--bio {
-            border-bottom: solid 3px $white;
+        @include tablet {
+            padding: 0 0.5rem 1.5rem;      
         }
     }
 
+    &__item {
+
+        @include tablet {
+            margin: 0 2rem;
+        }
+    
+        &--bio {
+            border-bottom: solid 4px $white;
+        }
+    }
 }
 
 
@@ -59,12 +76,25 @@
     background-image: url(../assets/image/hero.jpg);
     background-size: cover;
     background-position: center;
-    height: 50vh;
+    height: 37vh;
     display: flex;
     align-items: center;
-    color: $white;
     padding: 1rem;
-    font-size: 0.875rem;
+    font-size: 1.125rem;
+
+    @include tablet {
+        height: 73vh;
+        padding: 0 2rem;
+    }
+
+    &__header {
+        color: $white;
+        font-weight: 900;
+
+        @include tablet {
+            font-size: 3.75rem;
+        }
+    }
 }
 
 // About
@@ -72,26 +102,160 @@
 .about {
     padding: 2rem 1rem;
 
-    &__img {
-        width: 100%;
-        margin: 1.5rem 0;
-
+    @include tablet {
+        padding: 3rem 2rem;
     }
 
-    
+    &__header {
+        @include tablet {
+            font-size: 2.25rem;
+        }
+    }
+    &__img {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    &__text {
+       margin-bottom: 2.5rem;
+       font-weight: 600;
+
+        &--quote {
+            margin-bottom: 2rem;
+            line-height: 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+
+            @include tablet {
+                font-size: 1.5rem;
+                font-weight: 900;
+                line-height: 2rem;
+            }
+        }
+    }    
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__blurb {
+        font-size: 0.8125rem;
+        margin-bottom: 1rem;
+        line-height: 1.25rem;
+        
+        @include tablet {
+            margin: 0 1vh;
+        }
+
+        &--header {
+            font-weight: 600;
+            font-size: 1rem;
+
+            @include tablet {
+                font-size: 1.5rem;
+                font-weight: 900;
+            }
+        }
+    }
 }
 
+// Photo Gallery 
 
 .photo-gallery {
     padding: 2rem 1rem;
+    background-color: $alabaster;
+
+    &__header {
+        @include tablet {
+            padding: 2rem 1rem;
+            font-size: 2.25rem;
+        }
+    }
+
+    &__container {
+        
+        @include tablet {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+    }
 
     &__img {
-        width: 180px;
-    
+        width: 100%;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            width: 30%;
+            margin: 2vh;
+        }
     }
 }
 
-footer {
+// Footer 
+
+.footer {
     background-color: $black;
-    color: $white;
+    padding: 2.5rem 0.8125rem 1rem;
+
+    @include tablet {
+        padding: 3rem 2rem;
+    }
+    
+    & h1, h4, p {
+        color: $white;
+    }
+
+    & h4 {
+        font-weight: 600;
+    }
+
+    & p {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+    }
+
+    &__header {
+        font-size: 2.25rem;
+        
+        @include tablet {
+            padding-right: 2.25rem;
+        }
+    }
+
+    &__icons {
+        margin: 0 2rem 2rem 0.5rem;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__logo {
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+            margin: 0 auto;
+        }
+    }
+
+    &__container {
+        @include tablet {
+            display: flex;
+            align-items: baseline; 
+            margin-bottom: 1rem;  
+        }
+    }
+
+    &__item {
+        @include tablet {
+            margin-right: 1.75vw;
+        }
+    }
 }
