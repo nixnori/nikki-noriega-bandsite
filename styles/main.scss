@@ -91,6 +91,10 @@ h1, h2, h4 {
         @include tablet {
             margin: 0 2rem;
         }
+
+        &:hover {
+            border-bottom: solid 4px white;
+        }
     
         &--bio {
             border-bottom: solid 4px $white;
@@ -243,6 +247,14 @@ h1, h2, h4 {
     &__img {
         width: 100%;
         margin-bottom: 1rem;
+        filter: grayscale(100%);
+        transition: filter 0.5s ease-in-out;
+
+        &:hover {
+            filter: grayscale(0%);
+        }
+
+
 
         @include tablet {
             width: 30%;
@@ -264,8 +276,14 @@ h1, h2, h4 {
         padding: 3rem 13vw;
     }
     
-    & h1, h4, p {
+    & h1, h4, p, a {
         color: $white;
+    }
+
+    & a {
+        text-decoration: none;
+        display: inline-block;
+        padding-bottom: 1.5rem;
     }
 
     & h4 {
@@ -310,7 +328,7 @@ h1, h2, h4 {
         @include tablet {
             display: flex;
             align-items: baseline; 
-            margin-bottom: 1rem;  
+            margin-bottom: 1rem; 
         }
     }
 
