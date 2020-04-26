@@ -247,14 +247,15 @@ h1, h2, h4 {
     &__img {
         width: 100%;
         margin-bottom: 1rem;
-        filter: grayscale(100%);
-        transition: filter 0.5s ease-in-out;
 
-        &:hover {
-            filter: grayscale(0%);
+        @include desktop {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease-in-out;
+
+            &:hover {
+                filter: grayscale(0%);
+            }
         }
-
-
 
         @include tablet {
             width: 30%;
