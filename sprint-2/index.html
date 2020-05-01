@@ -21,30 +21,30 @@
         </nav>
     </header>
 
-    <section id="hero" class="hero hero--bio">
+    <section class="hero hero--bio">
         <h1 class="hero__header">Gaspard Auge & Xavier de Rosnay</h1>
     </section>
 
-    <section id="about" class="about">
+    <section class="about">
         <h1 class="about__header">About The Musicians</h1>
-        <div class="about__container--desktop">
+        <div class="about__container">
             <img class="about__img" src="./assets/image/about.jpg" alt="gaspard-and-xavier">
             <h2 class="about__text--quote">"We are more comfortable with not fighting what comes naturally. Before we might have thought, 'We need to be smarter than this'"</h2>
             <h4 class="about__text">-Xavier de Rosnay</h4>
            
-            <h2 class="about__blurb--header">Xavier de Rosnay & Gaspard Auge</h2>
-            <div class="about__container">
-               <div class="about__blurb">
+            <h2 class="blurb__header">Xavier de Rosnay & Gaspard Auge</h2>
+            <div class="blurb__container">
+               <div class="blurb__text">
                    <p>Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</p>      
                </div>
-               <div class="about__blurb">
+               <div class="blurb__text">
                    <p>Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</p>
                </div>
            </div>
         </div>
     </section>
 
-    <section id="photo-gallery" class="photo-gallery">
+    <section class="photo-gallery">
         <h1 class="photo-gallery__header">Photo Gallery</h1>
         <div class="photo-gallery__container">
             <img class="photo-gallery__img" src="./assets/image/Photo-gallery-1.jpg" alt="photo-1">
@@ -59,6 +59,19 @@
         </div>
     </section>
 
+    <section class="comments">
+        <h1 class="comments__header">Join the Conversation</h1>
+        <form action="" class="comments__form">
+            <label for="name">NAME</label>
+            <input type="text" name="name">
+            <label for="comment">COMMENT</label>
+            <textarea name="comment" cols="30" rows="10">Add a new comment</textarea>
+            <button type="submit">COMMENT</button>
+        </form>
+        <div class="comments__container">
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="footer__container footer__container">
             <h1 class="footer__item footer__header">Get In Touch</h1>
@@ -68,8 +81,7 @@
                 <img class="footer__icons" src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter">
             </div>
             <img class="footer__logo footer__item" src="./assets/logo/Logo-bandsite.svg"/>
-        </div>
-        
+        </div>       
         <div class="footer__container">
             <div class="footer__item">
                 <h4>Richard Rovner <br>
@@ -97,6 +109,6 @@
         <p>Copyright The Bees Knees © 2018 All Rights Reserved</p>
 
     </footer>
-    
+<script src="scripts.js"></script>
 </body>
 </html>

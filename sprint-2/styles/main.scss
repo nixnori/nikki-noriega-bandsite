@@ -163,21 +163,34 @@ h1, h2, h4 {
     }    
 
     &__container {
+        @include desktop {
+            padding: 1rem 10vw;
+        }
+    }
+}
+
+
+.blurb {
+    &__header {
+        font-weight: 600;
+            font-size: 1rem;
+
+            @include tablet {
+                font-size: 1.5rem;
+                font-weight: 900;
+            }
+    }
+
+    &__container {
         display: flex;
         flex-direction: column;
 
         @include tablet {
             flex-direction: row;
         }
-
-        &--desktop {
-            @include desktop {
-                padding: 1rem 10vw;
-            }
-        }
     }
 
-    &__blurb {
+    &__text {
         font-size: 0.8125rem;
         margin-bottom: 1rem;
         line-height: 1.25rem;
@@ -188,16 +201,6 @@ h1, h2, h4 {
 
         @include desktop {
             margin: 0 4vw 0 0;
-        }
-
-        &--header {
-            font-weight: 600;
-            font-size: 1rem;
-
-            @include tablet {
-                font-size: 1.5rem;
-                font-weight: 900;
-            }
         }
     }
 }
@@ -219,7 +222,6 @@ h1, h2, h4 {
     }
 
     &__container {
-        
         @include tablet {
             display: flex;
             flex-flow: row wrap;
