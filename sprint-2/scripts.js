@@ -63,9 +63,41 @@ comments.forEach(c => {
 });
 
 
+document.addEventListener('click', e => {
+    e.target.value = '';
+});
 
+const form = document.querySelector('.comments__form');
 
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
+    if (event.target.name.value !== 'Enter name' &&
+    event.target.name.value !== '' &&
+    event.target.comment.value !== 'Add a new comment' &&
+    event.target.comment.value !== '') {
+        let commentInput = {
+            pic: document.querySelector('.profilepic').src,
+            name: event.target.name.value,
+            date: '',
+            comment: event.target.comment.value
+        };
+
+        comments.push(commentInput);
+    };
+
+    while (commentsSection.lastElementChild) {
+        commentsSection.removeChild(commentsSection.lastElementChild)
+    }
+
+    comments.forEach(c => {
+        displayComments(c);
+    });
+
+    event.target.name.value = 'Enter name';
+    event.target.comment.value = 'Add a new comment';
+
+});
 
 
 

@@ -31,4 +31,18 @@ $desktop: 1200px;
     font-size: 1.125rem;
 }
 
+@mixin button {
+    color: $white;
+    background-color: $black;
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 1rem;   
+    
+    &:hover {
+        background-color: black;
+    }
+}
 

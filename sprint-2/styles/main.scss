@@ -243,7 +243,22 @@ h1, h2, h4 {
 
 // Comments 
 .comments {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1.5rem;
+
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px $mercury;
+        margin-bottom: 1.5rem;
+    }
+
+    &__label {
+        display: block;
+        font-size: 0.8rem;
+        color: $silver;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
 
     &__container {
         display: flex;
@@ -260,12 +275,13 @@ h1, h2, h4 {
     &__pic {
         width: 2.75rem;
         height: 2.75rem;
+        background-position: center;
         border-radius: 100%;
     }
 
     &__item {
-        width: 80%;
         margin-bottom: 1rem;
+        width: 80%;
     }
 
     &__list {
@@ -288,8 +304,39 @@ h1, h2, h4 {
         font-size: 0.87rem;
         line-height: 1.25rem;
     }
+
+    &__button {
+        @include button;
+
+        &:focus {
+            outline: none;
+        }
+    }
 }
 
+.box {
+    padding: 0.9rem;
+    background-color: $alabaster;
+    border-radius: 5px;
+    border: solid 1px $mercury;
+    width: 100%;
+    font-size: 0.9rem;
+
+    &:focus {
+        border: solid 2px $black;
+        outline: none;
+    }
+
+    &__name {
+        margin-bottom: 1rem;
+    }
+
+    &__comment {
+        margin-bottom: 0.5rem;
+        resize: none;
+    }
+
+}
 // Footer 
 .footer {
     background-color: $black;

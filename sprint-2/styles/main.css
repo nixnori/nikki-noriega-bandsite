@@ -327,7 +327,26 @@ h1, h2, h4 {
 }
 
 .comments {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1.5rem;
+}
+
+.comments__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: solid 1px #e1e1e1;
+  margin-bottom: 1.5rem;
+}
+
+.comments__label {
+  display: block;
+  font-size: 0.8rem;
+  color: #afafaf;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
 }
 
 .comments__container {
@@ -354,12 +373,13 @@ h1, h2, h4 {
 .comments__pic {
   width: 2.75rem;
   height: 2.75rem;
+  background-position: center;
   border-radius: 100%;
 }
 
 .comments__item {
-  width: 80%;
   margin-bottom: 1rem;
+  width: 80%;
 }
 
 .comments__list {
@@ -385,6 +405,48 @@ h1, h2, h4 {
 .comments__text {
   font-size: 0.87rem;
   line-height: 1.25rem;
+}
+
+.comments__button {
+  color: #fff;
+  background-color: #323232;
+  width: 100%;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.comments__button:hover {
+  background-color: black;
+}
+
+.comments__button:focus {
+  outline: none;
+}
+
+.box {
+  padding: 0.9rem;
+  background-color: #fafafa;
+  border-radius: 5px;
+  border: solid 1px #e1e1e1;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.box:focus {
+  border: solid 2px #323232;
+  outline: none;
+}
+
+.box__name {
+  margin-bottom: 1rem;
+}
+
+.box__comment {
+  margin-bottom: 0.5rem;
+  resize: none;
 }
 
 .footer {
