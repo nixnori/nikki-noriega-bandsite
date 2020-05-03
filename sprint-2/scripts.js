@@ -72,6 +72,9 @@ const form = document.querySelector('.comments__form');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    let d = new Date();
+    let date = (d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear();
+
     if (event.target.name.value !== 'Enter name' &&
     event.target.name.value !== '' &&
     event.target.comment.value !== 'Add a new comment' &&
@@ -79,7 +82,7 @@ form.addEventListener('submit', (e) => {
         let commentInput = {
             pic: document.querySelector('.profilepic').src,
             name: event.target.name.value,
-            date: '',
+            date: date,
             comment: event.target.comment.value
         };
 
