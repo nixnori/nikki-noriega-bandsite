@@ -1,0 +1,221 @@
+@import './partials/fonts', './partials/variables-and-mixins';
+
+*, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Avenir';
+    color: $black;
+}
+
+h1, h2, h4 {
+    margin-bottom: 1.5rem;
+}
+
+// Header 
+.header {
+    background-color: $black;
+    text-align: center;
+    padding: 1rem 0 0;
+    height: 80px;
+    box-sizing: border-box;
+
+    @include tablet {
+        display: flex;
+        padding: 2rem;
+    }
+
+    @include desktop {
+        padding: 2rem 10rem;
+    }
+
+    &__img {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.navbar {    
+
+    margin: 0;
+    padding: 0;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+
+        @include tablet {
+            padding: 0 3rem;
+        }
+
+        @include desktop {
+            padding: 0 2rem;
+        }
+    }
+    
+    & a {
+        text-decoration: none;
+        color: $white;
+        font-size: 0.875rem;
+        font-weight: 600;
+        display: inline-block;
+        padding: 0 3rem 0.55rem;
+
+        @include tablet {
+            padding: 0 0.5rem 1.5rem;      
+        }
+    }
+
+    &__item {
+        flex-basis: auto;
+        width: 50%;
+
+        @include tablet {
+            margin: 0 2rem;
+        }
+
+        &:hover {
+            border-bottom: solid 4px white;
+        }
+    }
+
+    &__shows {
+        border-bottom: solid 4px $white;
+    }
+}
+
+// Hero
+.hero {
+    background-image: url(../assets/image/shows-hero.jpg);
+    height: 80vh;
+    @include bg;
+    justify-content: space-evenly;
+   
+    @include tablet {
+        height: 73vh;
+        padding: 0 2rem;
+    }
+
+    @include desktop {
+        height: 83vh;
+        padding: 0 8rem;
+    }
+
+    &__header {
+        color: $white;
+        font-weight: 900;
+
+        @include tablet {
+            font-size: 3.75rem;
+        }
+
+        &--small {
+            color: $white;
+
+            @include tablet {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__item {
+        flex-basis: auto;
+        margin: 2.25rem;
+        width: 50%;
+
+        &--1 {
+            flex-grow: 2;
+        }
+
+        &--2 {
+            width: 50%;
+            height: 20%;
+            flex-grow: 1;
+        }
+    }
+
+
+}
+
+.shows {
+    display: flex;
+}
+
+// Footer 
+.footer {
+    background-color: $black;
+    padding: 2.5rem 0.8125rem 1rem;
+
+    @include tablet {
+        padding: 3rem 2rem;
+    }
+
+    @include desktop {
+        padding: 3rem 13vw;
+    }
+    
+    & h1, h4, p, a {
+        color: $white;
+    }
+
+    & a {
+        text-decoration: none;
+        display: inline-block;
+        padding-bottom: 1.5rem;
+    }
+
+    & h4 {
+        font-weight: 600;
+    }
+
+    & p {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+    }
+
+    &__header {
+        font-size: 2.25rem;
+        
+        @include tablet {
+            padding-right: 2.25rem;
+        }
+
+        @include desktop {
+            padding-right: 0;
+        }
+    }
+
+    &__icons {
+        margin: 0 2rem 2rem 0.5rem;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__logo {
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+            margin: 0 auto;
+        }
+    }
+
+    &__container {
+        @include tablet {
+            display: flex;
+            align-items: baseline; 
+            margin-bottom: 1rem; 
+        }
+    }
+
+    &__item {
+        @include tablet {
+            margin-right: 1.75vw;
+        }
+
+        @include desktop {
+            margin-right: 4vw;
+        }
+    }
+}

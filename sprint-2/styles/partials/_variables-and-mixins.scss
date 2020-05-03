@@ -21,5 +21,13 @@ $desktop: 1200px;
     }
 };
 
+@mixin bg {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.125rem;
+}
 
 

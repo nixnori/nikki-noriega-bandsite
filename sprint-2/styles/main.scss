@@ -40,7 +40,7 @@ h1, h2, h4 {
 
     &__container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
 
         @include tablet {
             padding: 0 3rem;
@@ -65,6 +65,8 @@ h1, h2, h4 {
     }
 
     &__item {
+        flex-basis: auto;
+        width: 50%;
 
         @include tablet {
             margin: 0 2rem;
@@ -73,31 +75,18 @@ h1, h2, h4 {
         &:hover {
             border-bottom: solid 4px white;
         }
-    
-        &--bio {
-            border-bottom: solid 4px $white;
-        }
+    }
+
+    &__bio {
+        border-bottom: solid 4px $white;
     }
 }
 
-
 // Hero
 .hero {
-
-    &--bio {
-        background-image: url(../assets/image/hero.jpg);
-    }
-
-    &--shows {
-        background-image: url(../assets/image/shows-hero.jpg);
-    }
-    background-size: cover;
-    background-position: center;
+    background-image: url(../assets/image/hero.jpg);
     height: 37vh;
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    font-size: 1.125rem;
+    @include bg;
    
     @include tablet {
         height: 73vh;
@@ -117,8 +106,6 @@ h1, h2, h4 {
             font-size: 3.75rem;
         }
     }
-
-
 }
 
 // About
