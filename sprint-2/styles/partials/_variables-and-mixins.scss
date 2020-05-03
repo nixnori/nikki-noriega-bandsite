@@ -3,6 +3,8 @@
 $black: #323232;
 $white: #fff;
 $alabaster: #fafafa;
+$mercury: #e1e1e1;
+$silver: #afafaf;
 
 // Breakpoints
 $tablet: 768px;
@@ -25,7 +27,6 @@ $desktop: 1200px;
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: center;
     padding: 1rem;
     font-size: 1.125rem;
 }

@@ -87,6 +87,7 @@ h1, h2, h4 {
     background-image: url(../assets/image/hero.jpg);
     height: 37vh;
     @include bg;
+    align-items: center;
    
     @include tablet {
         height: 73vh;
