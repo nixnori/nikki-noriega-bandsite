@@ -143,8 +143,17 @@ h1, h2, h4 {
 
 @media (min-width: 1200px) {
   .hero {
-    height: 83vh;
-    padding: 4rem 1rem 2rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 10rem 12vw 12rem;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -156,6 +165,14 @@ h1, h2, h4 {
 @media (min-width: 768px) {
   .hero__header {
     font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__header {
+    margin-bottom: 0;
+    font-size: 3.25rem;
+    line-height: 4.5rem;
   }
 }
 
@@ -171,6 +188,12 @@ h1, h2, h4 {
   }
 }
 
+@media (min-width: 1200px) {
+  .hero__header--small {
+    font-size: 1.25rem;
+  }
+}
+
 .hero__sound {
   width: 100%;
   height: 20vh;
@@ -179,6 +202,26 @@ h1, h2, h4 {
 @media (min-width: 768px) {
   .hero__sound {
     width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__sound {
+    width: 100%;
+    height: 8rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__item--1 {
+    width: 55%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__item--2 {
+    width: 40%;
   }
 }
 
@@ -199,6 +242,19 @@ h1, h2, h4 {
   }
 }
 
+@media (min-width: 1200px) {
+  .shows {
+    padding: 3rem 12vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 @media (min-width: 768px) {
   .shows__header {
     font-size: 2.25rem;
@@ -215,6 +271,12 @@ h1, h2, h4 {
           flex-direction: column;
 }
 
+@media (min-width: 1200px) {
+  .shows__table {
+    width: 75%;
+  }
+}
+
 .shows__card {
   border-bottom: solid 1px #e1e1e1;
   margin-bottom: 1.5rem;
@@ -228,6 +290,9 @@ h1, h2, h4 {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
   }
 }
 
@@ -291,6 +356,7 @@ h1, h2, h4 {
 @media (min-width: 768px) {
   .table__header--1 {
     width: 25%;
+    margin-bottom: 1.5rem;
   }
 }
 
