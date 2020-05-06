@@ -256,7 +256,11 @@ h1, h2, h4 {
 
     &__item {
         @include tablet {
-            width: 25%;
+            width: 23%;
+        }
+
+        @include desktop {
+            width: 20%;
         }
     }
 }
