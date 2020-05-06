@@ -1,0 +1,48 @@
+
+// Colors
+$black: #323232;
+$white: #fff;
+$alabaster: #fafafa;
+$mercury: #e1e1e1;
+$silver: #afafaf;
+
+// Breakpoints
+$tablet: 768px;
+$desktop: 1200px;
+
+// Mixins
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+};
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+};
+
+@mixin bg {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    padding: 1rem;
+    font-size: 1.125rem;
+}
+
+@mixin button {
+    color: $white;
+    background-color: $black;
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 1rem;   
+    
+    &:hover {
+        background-color: black;
+    }
+}
+

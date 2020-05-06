@@ -1,0 +1,480 @@
+@import './partials/fonts', './partials/variables-and-mixins';
+
+*, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Avenir';
+    color: $black;
+}
+
+h1, h2, h4 {
+    margin-bottom: 1.5rem;
+}
+
+// Header 
+.header {
+    background-color: $black;
+    text-align: center;
+    padding: 1rem 0 0;
+    height: 80px;
+    box-sizing: border-box;
+
+    @include tablet {
+        display: flex;
+        padding: 2rem;
+    }
+
+    @include desktop {
+        padding: 2rem 10rem;
+    }
+
+    &__img {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.navbar {    
+    margin: 0;
+    padding: 0;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+
+        @include tablet {
+            padding: 0 3rem;
+        }
+
+        @include desktop {
+            padding: 0 2rem;
+        }
+    }
+    
+    & a {
+        text-decoration: none;
+        color: $white;
+        font-size: 0.875rem;
+        font-weight: 600;
+        display: inline-block;
+        padding: 0 3rem 0.55rem;
+
+        @include tablet {
+            padding: 0 0.5rem 1.5rem;      
+        }
+    }
+
+    &__item {
+        flex-basis: auto;
+        width: 50%;
+
+        @include tablet {
+            margin: 0 2rem;
+        }
+
+        &:hover {
+            border-bottom: solid 4px white;
+        }
+    }
+
+    &__bio {
+        border-bottom: solid 4px $white;
+    }
+}
+
+// Hero
+.hero {
+    background-image: url(../assets/image/hero.jpg);
+    height: 37vh;
+    @include bg;
+    align-items: center;
+   
+    @include tablet {
+        height: 73vh;
+        padding: 0 2rem;
+    }
+
+    @include desktop {
+        height: 83vh;
+        padding: 0 40vw 0 11vw;
+    }
+
+    &__header {
+        color: $white;
+        font-weight: 900;
+
+        @include tablet {
+            font-size: 3.75rem;
+        }
+    }
+}
+
+// About
+.about {
+    padding: 2rem 1rem;
+
+    @include tablet {
+        padding: 3rem 2rem;
+    }
+
+    @include desktop {
+        padding: 3rem 11vw;
+    }
+
+    &__header {
+        @include tablet {
+            font-size: 2.25rem;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    &__text {
+       margin-bottom: 2.5rem;
+       font-weight: 600;
+
+        &--quote {
+            margin-bottom: 2rem;
+            line-height: 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+
+            @include tablet {
+                font-size: 1.5rem;
+                font-weight: 900;
+                line-height: 2rem;
+            }
+        }
+    }    
+
+    &__container {
+        @include desktop {
+            padding: 1rem 8vw;
+        }
+    }
+}
+
+
+.blurb {
+    &__header {
+        font-weight: 600;
+            font-size: 1rem;
+
+            @include tablet {
+                font-size: 1.5rem;
+                font-weight: 900;
+            }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__text {
+        font-size: 0.8125rem;
+        margin-bottom: 1rem;
+        line-height: 1.25rem;
+        
+        @include tablet {
+            margin: 0 1vw;
+        }
+
+        @include desktop {
+            margin: 0 2vw 0 0;
+        }
+    }
+}
+
+// Photo Gallery 
+.photo-gallery {
+    padding: 2rem 1rem;
+    background-color: $alabaster;
+
+    &__header {
+        @include tablet {
+            padding: 2rem 1rem;
+            font-size: 2.25rem;
+        }
+
+        @include desktop {
+            padding: 1rem 11vw;
+        }
+    }
+
+    &__container {
+        @include tablet {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+
+        @include desktop {
+            padding: 0 9vw;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 1rem;
+
+        @include desktop {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease-in-out;
+
+            &:hover {
+                filter: grayscale(0%);
+            }
+        }
+
+        @include tablet {
+            width: 30%;
+            margin: 2vh 1vw;
+        }
+    }
+}
+
+// Comments 
+.comments {
+    padding: 2rem 1rem 1.5rem;
+
+    &__header {
+        @include tablet {
+            padding: 1.5rem 1rem;
+            font-size: 2.25rem;
+        }
+
+        @include desktop {
+            padding: 1rem 11vw;
+        }
+    }
+
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px $mercury;
+        margin-bottom: 1.5rem;
+    }
+
+    &__label {
+        display: block;
+        font-size: 0.8rem;
+        color: $silver;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @include tablet {
+            padding: 0 13vw;
+        }
+
+        @include desktop {
+            padding: 0 27vw;
+        }
+
+        &--1 {
+            @include tablet {
+                padding: 0 13vw;
+            }
+
+            @include desktop {
+                padding: 0 27vw;
+            }
+        }
+    }
+
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px $mercury;
+        margin-bottom: 1.5rem;
+    }
+
+    &__pic {
+        width: 2.75rem;
+        height: 2.75rem;
+        background-position: center;
+        border-radius: 100%;
+
+        @include tablet {
+            width: 3rem;
+        height: 3rem;
+        }
+    }
+
+    &__item {
+        margin-bottom: 1rem;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            width: 85%;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+
+        @include tablet {
+            justify-content: flex-start;
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+
+        @include tablet {
+            margin-right: 1rem;
+        }
+    }
+
+    &__date {
+        color: $silver;
+    }
+
+    &__text {
+        font-size: 0.87rem;
+        line-height: 1.25rem;
+    }
+
+    &__button {
+        @include button;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include tablet {
+            width: 35%;
+            align-self: flex-end;
+        }
+    }
+}
+
+.box {
+    padding: 0.9rem;
+    background-color: $alabaster;
+    border-radius: 5px;
+    border: solid 1px $mercury;
+    width: 100%;
+    font-size: 0.9rem;
+
+    &:focus {
+        border: solid 2px $black;
+        outline: none;
+    }
+
+    &__name {
+        margin-bottom: 1rem;
+
+        @include tablet {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__comment {
+        margin-bottom: 0.5rem;
+        resize: none;
+
+        @include tablet {
+            margin-bottom: 1.5rem;
+            height: 6rem;
+        }
+    }
+
+}
+// Footer 
+.footer {
+    background-color: $black;
+    padding: 2.5rem 0.8125rem 1rem;
+
+    @include tablet {
+        padding: 3rem 2rem;
+    }
+
+    @include desktop {
+        padding: 3rem 13vw;
+    }
+    
+    & h1, h4, p, a {
+        color: $white;
+    }
+
+    & a {
+        text-decoration: none;
+        display: inline-block;
+        padding-bottom: 1.5rem;
+    }
+
+    & h4 {
+        font-weight: 600;
+    }
+
+    & p {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+    }
+
+    &__header {
+        font-size: 2.25rem;
+        
+        @include tablet {
+            padding-right: 2.25rem;
+        }
+
+        @include desktop {
+            padding-right: 0;
+        }
+    }
+
+    &__icons {
+        margin: 0 2rem 2rem 0.5rem;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__logo {
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+            margin: 0 auto;
+        }
+    }
+
+    &__container {
+        @include tablet {
+            display: flex;
+            align-items: baseline; 
+            margin-bottom: 1rem; 
+        }
+    }
+
+    &__item {
+        @include tablet {
+            margin-right: 1.75vw;
+        }
+
+        @include desktop {
+            margin-right: 4vw;
+        }
+    }
+}
