@@ -24,6 +24,7 @@ const displayComments = (response) => {
         let c = response;
 
         let commentCard = document.createElement('div');
+        commentCard.id = c.id;
         commentCard.classList.add('comments__card');
     
         let commentItem = document.createElement('div');
@@ -51,46 +52,40 @@ const displayComments = (response) => {
         comment.classList.add('comments__text');
         comment.innerText = c.comment;
     
+        let deleteComment = document.createElement('button');
+        deleteComment.classList.add('comments__delete');
+        deleteComment.innerText = "X DELETE";
+
         commentList.appendChild(name);
         commentList.appendChild(date);
         commentItem.appendChild(commentList);
         commentItem.appendChild(comment);
+        commentItem.appendChild(deleteComment);
         commentCard.appendChild(pic);
         commentCard.appendChild(commentItem);
         commentContainer.appendChild(commentCard);
 };
 
-document.addEventListener('click', e => {
-    e.target.value = '';
-});
-
 document.addEventListener('submit', e => {
     e.preventDefault();
 
-    if (event.target.name.value !== 'Enter name' &&
-    event.target.name.value !== '' &&
-    event.target.comment.value !== 'Add a new comment' &&
-    event.target.comment.value !== '') {
-        let name = event.target.name.value;
-        let comment = event.target.comment.value;
+    let name = event.target.name.value;
+    let comment = event.target.comment.value;
 
-        axios.post(apiBaseURL + 'comments' + apiKey, {
-            'name': name,
-            'comment': comment
-        })
-        .then(() => {
-            while (commentContainer.lastElementChild) {
-                commentContainer.removeChild(commentContainer.lastElementChild)
-            }
-        })
-        .then(getComments)
-        .catch(error => {
-            console.log(error);
-        });
-
-    event.target.name.value = 'Enter name';
-    event.target.comment.value = 'Add a new comment';;
-    }
+    axios.post(apiBaseURL + 'comments' + apiKey, {
+        'name': name,
+        'comment': comment
+    })
+    .then(() => {
+        while (commentContainer.lastElementChild) {
+            commentContainer.removeChild(commentContainer.lastElementChild)
+        }
+    })
+    .then(getComments)
+    .catch(error => {
+        console.log(error);
+    });
+    
 });
 
 

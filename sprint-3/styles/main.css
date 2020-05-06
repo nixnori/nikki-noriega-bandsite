@@ -476,6 +476,7 @@ h1, h2, h4 {
 .comments__text {
   font-size: 0.87rem;
   line-height: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .comments__button {
@@ -503,6 +504,20 @@ h1, h2, h4 {
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
+}
+
+.comments__delete {
+  border: none;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  text-align: right;
+  color: #afafaf;
+  font-weight: 600;
+  width: 15%;
+}
+
+.comments__delete:hover {
+  color: red;
 }
 
 .box {

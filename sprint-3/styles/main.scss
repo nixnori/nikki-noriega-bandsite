@@ -351,6 +351,7 @@ h1, h2, h4 {
     &__text {
         font-size: 0.87rem;
         line-height: 1.25rem;
+        margin-bottom: 1rem;
     }
 
     &__button {
@@ -363,6 +364,19 @@ h1, h2, h4 {
         @include tablet {
             width: 35%;
             align-self: flex-end;
+        }
+    }
+
+    &__delete {
+        border: none;
+        align-self: flex-end;
+        text-align: right;
+        color: $silver;
+        font-weight: 600;
+        width: 15%;
+
+        &:hover {
+            color: red;
         }
     }
 }
