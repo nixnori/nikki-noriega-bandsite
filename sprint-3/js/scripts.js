@@ -1,10 +1,15 @@
 const apiBaseURL = 'https://project-1-api.herokuapp.com/';
-const apiKey = '?api_key=4e618b64-84d4-45ac-9e8e-599621afb0f4';
+const apiKey = '4e618b64-84d4-45ac-9e8e-599621afb0f4';
 const form = document.querySelector('.comments__form');
+const headers = {
+    headers: {
+        'Content-Type': 'application/json'
+    }
+};
 
 
 const getComments = () => {
-    axios.get(apiBaseURL + 'comments' + apiKey)
+    axios.get(`${apiBaseURL}comments?api_key=${apiKey}`)
     .then(res => {
         res.data.forEach(response => {
             displayComments(response);
@@ -24,7 +29,6 @@ const displayComments = (response) => {
         let c = response;
 
         let commentCard = document.createElement('div');
-        commentCard.id = c.id;
         commentCard.classList.add('comments__card');
     
         let commentItem = document.createElement('div');
@@ -42,7 +46,7 @@ const displayComments = (response) => {
         name.innerText = c.name;
     
         let d = new Date(c.timestamp);
-        let dateItem = (d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear();
+        let dateItem = `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()}`;
     
         let date = document.createElement('li');
         date.classList.add('comments__date');
@@ -51,16 +55,11 @@ const displayComments = (response) => {
         let comment = document.createElement('p');
         comment.classList.add('comments__text');
         comment.innerText = c.comment;
-    
-        let deleteComment = document.createElement('button');
-        deleteComment.classList.add('comments__delete');
-        deleteComment.innerText = "X DELETE";
 
         commentList.appendChild(name);
         commentList.appendChild(date);
         commentItem.appendChild(commentList);
         commentItem.appendChild(comment);
-        commentItem.appendChild(deleteComment);
         commentCard.appendChild(pic);
         commentCard.appendChild(commentItem);
         commentContainer.appendChild(commentCard);
@@ -72,10 +71,10 @@ document.addEventListener('submit', e => {
     let name = event.target.name.value;
     let comment = event.target.comment.value;
 
-    axios.post(apiBaseURL + 'comments' + apiKey, {
+    axios.post(`${apiBaseURL}comments?api_key=${apiKey}`, {
         'name': name,
         'comment': comment
-    })
+    }, headers)
     .then(() => {
         while (commentContainer.lastElementChild) {
             commentContainer.removeChild(commentContainer.lastElementChild)
@@ -85,8 +84,8 @@ document.addEventListener('submit', e => {
     .catch(error => {
         console.log(error);
     });
+
+    event.target.name.value = '';
+    event.target.comment.value = '';
     
 });
-
-
-

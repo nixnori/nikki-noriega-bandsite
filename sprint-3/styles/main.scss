@@ -256,6 +256,21 @@ h1, h2, h4 {
         }
     }
 
+    &__profile {
+        background-image: url(../assets/image/Mohan-muruge.jpg);
+        background-position: left;
+        background-size: cover;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 100%;
+
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
+        }
+
+    }
+
     &__form {
         display: flex;
         justify-content: space-between;
@@ -304,12 +319,11 @@ h1, h2, h4 {
     &__pic {
         width: 2.75rem;
         height: 2.75rem;
-        background-position: center;
         border-radius: 100%;
 
         @include tablet {
             width: 3rem;
-        height: 3rem;
+            height: 3rem;
         }
     }
 
@@ -373,7 +387,7 @@ h1, h2, h4 {
         text-align: right;
         color: $silver;
         font-weight: 600;
-        width: 15%;
+        width: 23%;
 
         &:hover {
             color: red;

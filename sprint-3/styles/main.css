@@ -343,6 +343,22 @@ h1, h2, h4 {
   }
 }
 
+.comments__profile {
+  background-image: url(../assets/image/Mohan-muruge.jpg);
+  background-position: left;
+  background-size: cover;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 100%;
+}
+
+@media (min-width: 768px) {
+  .comments__profile {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
 .comments__form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -410,7 +426,6 @@ h1, h2, h4 {
 .comments__pic {
   width: 2.75rem;
   height: 2.75rem;
-  background-position: center;
   border-radius: 100%;
 }
 
@@ -513,7 +528,7 @@ h1, h2, h4 {
   text-align: right;
   color: #afafaf;
   font-weight: 600;
-  width: 15%;
+  width: 23%;
 }
 
 .comments__delete:hover {
